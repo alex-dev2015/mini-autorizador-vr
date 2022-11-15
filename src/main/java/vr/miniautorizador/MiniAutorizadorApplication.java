@@ -1,4 +1,4 @@
-package vr.miniautorizador.miniautorizador;
+package vr.miniautorizador;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package vr.miniautorizador.miniautorizador;
+package vr.miniautorizador;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
