@@ -1,5 +1,6 @@
 package vr.miniautorizador.repository;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 import vr.miniautorizador.entity.Cartao;
@@ -10,6 +11,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 @Repository
 public interface CartaoRepository extends JpaRepository<Cartao, String> {
     @Query("SELECT c.saldo FROM Cartao c WHERE c.numeroCartao = :numeroDoCartao")
-    Optional<Double> consultarSaldoDoCartao(String numeroDoCartao);
+    Optional<BigDecimal> consultarSaldoDoCartao(String numeroDoCartao);
 
 }

@@ -27,9 +27,9 @@ public class CartaoServiceImplantacao implements ICartaoService {
     }
 
     @Override
-    public Optional<Double> consultarSaldo(String numeroCartao) {
+    public Optional<BigDecimal> consultarSaldo(String numeroCartao) {
 
-        Optional<Double> saldo = cartaoRepository.consultarSaldoDoCartao(numeroCartao);
+        Optional<BigDecimal> saldo = cartaoRepository.consultarSaldoDoCartao(numeroCartao);
         return saldo;
     }
 

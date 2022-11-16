@@ -1,5 +1,6 @@
 package vr.miniautorizador.controller;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
@@ -27,12 +28,12 @@ public class CartaoController {
 
     }
 
-    @GetMapping("/cartoes/{numberCard}")
-    public ResponseEntity<Double> consultar(@PathVariable(required = true) String numberCard) {
-        Optional<Double> balance = service.consultarSaldo(numberCard);
+    @GetMapping("/cartoes/{numeroCartao}")
+    public ResponseEntity<BigDecimal> consultar(@PathVariable(required = true) String numeroCartao) {
+        Optional<BigDecimal> saldo = service.consultarSaldo(numeroCartao);
 
-        return balance.isPresent()
-                ? new ResponseEntity<Double>(balance.get(), HttpStatus.OK)
+        return saldo.isPresent()
+                ? new ResponseEntity<BigDecimal>(saldo.get(), HttpStatus.OK)
                 : ResponseEntity.notFound().build();
     }
 

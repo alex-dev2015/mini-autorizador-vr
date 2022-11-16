@@ -1,5 +1,6 @@
 package vr.miniautorizador.service;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 import vr.miniautorizador.entity.Cartao;
@@ -21,5 +22,5 @@ public interface ICartaoService {
      * @param numberCard - Número do cartão.
      * @return - Dados do cartão.
      */
-    Optional<Double> consultarSaldo(String numberCard);
+    Optional<BigDecimal> consultarSaldo(String numberCard);
 }
