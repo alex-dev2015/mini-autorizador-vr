@@ -11,17 +11,16 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tb_cards")
-public class Card {
+@Table(name = "tb_cartao", uniqueConstraints = @UniqueConstraint(columnNames = "numeroCartao"))
+public class Cartao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
-    private String numberCard;
+    private String numeroCartao;
 
-    private String passwordCard;
+    private String senha;
 
-    private BigDecimal value;
+    private BigDecimal saldo;
 }

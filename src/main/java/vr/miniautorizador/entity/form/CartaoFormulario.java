@@ -9,12 +9,12 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CardForm {
+public class CartaoFormulario {
 
-    private String numberCard;
+    private String numeroCartao;
 
-    private String passwordCard;
+    private String senha;
 
-    private BigDecimal value;
+    private BigDecimal saldo;
 
 }
