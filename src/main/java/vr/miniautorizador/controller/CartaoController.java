@@ -10,6 +10,8 @@ import vr.miniautorizador.entity.form.CartaoFormulario;
 import org.springframework.beans.factory.annotation.Autowired;
 import vr.miniautorizador.service.implantation.CartaoServiceImplantacao;
 
+import javax.validation.Valid;
+
 
 @RestController
 @RequestMapping
@@ -19,7 +21,7 @@ public class CartaoController {
     private CartaoServiceImplantacao service;
 
     @PostMapping("/cartoes")
-    public ResponseEntity<Object> criar(@RequestBody CartaoFormulario form) {
+    public ResponseEntity<Object> criar(@Valid @RequestBody CartaoFormulario form) {
         try {
             return new ResponseEntity<Object>(service.criar(form), HttpStatus.CREATED);
         } catch (Exception e) {
