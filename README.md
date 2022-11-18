@@ -11,7 +11,7 @@
 - [Anotações de Mapeamento](#maps)
 - [Links](#links)
 - [Licença](#licence)
-- [Autor](#licence)
+- [Autor](#autor)
 
 ## 🎯 Objetivo do Projeto <a name = "objetivo"></a>
 
@@ -89,7 +89,7 @@ Especifica que o valor do identificador de entidade é gerado automaticamente.
 Usada para especificar o mapeamento entre um atributo de entidade básico e a coluna da tabela de banco de dados.
 
 
-## 🔗 Links Úteis <a name = "utils"></a>
+## 🔗 Links Úteis <a name = "links"></a>
 <ul>
     <li><a href="https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.6.1&packaging=jar&jvmVersion=11&groupId=me.dio.academia&artifactId=academia-digital&name=academia-digital&description=Tutorial%20API%20RESTful%20modelando%20sistema%20de%20academia%20de%20gin%C3%A1stica&packageName=me.dio.academia.digital&dependencies=web,data-jpa,postgresql,validation,lombok">Spring Initializr</a></li>
     <li><a href="https://docs.spring.io/spring-boot/docs/2.0.x/reference/html/common-application-properties.html">Common application properties</a></li>
@@ -99,11 +99,11 @@ Usada para especificar o mapeamento entre um atributo de entidade básico e a co
 </ul>
 
 
-## 📜 Licença <a name = "license"></a>
+## 📜 Licença <a name = "licence"></a>
 
 Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
-## ✍️ Autor <a name = "autor"></a>
+## ✍️Autor <a name = "autor"></a>
 
  <a href="https://github.com/alex-dev2015" target="_blank">Alex Sousa</a>
 
