@@ -10,7 +10,7 @@
 - [Tecnologias Utilizadas](#utils)
 - [Anotações de Mapeamento](#maps)
 - [Links](#links)
-- [Licença](#licence)
+- [Licença](#license)
 - [Autor](#autor)
 
 ## 🎯 Objetivo do Projeto <a name = "objetivo"></a>
@@ -99,7 +99,7 @@ Usada para especificar o mapeamento entre um atributo de entidade básico e a co
 </ul>
 
 
-## 📜 Licença <a name = "licence"></a>
+## 📜 Licença <a name = "license"></a>
 
 Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
