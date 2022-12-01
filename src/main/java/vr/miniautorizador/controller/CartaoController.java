@@ -28,7 +28,7 @@ public class CartaoController {
         try {
             return new ResponseEntity<Object>(service.criar(form), HttpStatus.CREATED);
         } catch (Exception e) {
-            return new ResponseEntity<Object>(form, HttpStatus.UNPROCESSABLE_ENTITY);
+            return new ResponseEntity<Object>(ValidacaoEnum.CARTAO_EXISTENTE.getMensagem(), HttpStatus.UNPROCESSABLE_ENTITY);
         }
 
     }
@@ -55,9 +55,6 @@ public class CartaoController {
         }
         catch (SaldoException e) {
             return new ResponseEntity<String>(ValidacaoEnum.SALDO_INSUFICIENTE.getMensagem(), HttpStatus.UNPROCESSABLE_ENTITY);
-        }
-        catch (ExistenteException e) {
-            return new ResponseEntity<String>(ValidacaoEnum.CARTAO_EXISTENTE.getMensagem(), HttpStatus.UNPROCESSABLE_ENTITY);
         }
     }
 
