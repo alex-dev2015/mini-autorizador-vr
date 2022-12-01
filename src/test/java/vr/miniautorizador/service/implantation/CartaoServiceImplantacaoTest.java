@@ -10,6 +10,8 @@ import vr.miniautorizador.entity.Cartao;
 import vr.miniautorizador.entity.form.CartaoFormulario;
 import vr.miniautorizador.entity.form.TransacaoFormulario;
 import vr.miniautorizador.exception.CartaoException;
+import vr.miniautorizador.exception.SaldoException;
+import vr.miniautorizador.exception.SenhaException;
 import vr.miniautorizador.repository.CartaoRepository;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -24,7 +26,7 @@ public class CartaoServiceImplantacaoTest {
     @Autowired
     private CartaoRepository cartaoRepository;
 
-    @Autowired(required = true)
+    @Autowired
     private CartaoServiceImplantacao servicoImplantacao;
 
     private void Inicializar() {
@@ -50,4 +52,40 @@ public class CartaoServiceImplantacaoTest {
 
     }
 
+    @Test
+    public void quandoBuscarSaldoECartaoForInexistenteDeveRetornarNumeroInexistente(){
+        Inicializar();
+        String numeroDeCartaoInexistente = "111111111";
+
+        Optional<BigDecimal> saldoCartao = servicoImplantacao.consultarSaldo(numeroDeCartaoInexistente);
+
+        assertFalse(saldoCartao.isPresent());
+
+    }
+
+    @Test
+    public void quandoMetodoDeTransacaoForChamadoUsandoSaldoInsuficienteDeveRetornarErro(){
+        Inicializar();
+        TransacaoFormulario operacao = new TransacaoFormulario("1234123412341234", "1234", new BigDecimal("10000.00"));
+
+        try {
+            String resultado = servicoImplantacao.transacao(operacao);
+            fail();
+        }catch (Exception e){
+            assertSame(e.getClass(), SaldoException.class);
+        }
+    }
+
+    @Test
+    public void quandoMetodoDeTransacaoForChamadoUsandoSenhaIncorretaDeveRetornarErro(){
+        Inicializar();
+        TransacaoFormulario operacao = new TransacaoFormulario("1234123412341234", "00000", new BigDecimal("100.00"));
+
+        try {
+            String resultado = servicoImplantacao.transacao(operacao);
+            fail();
+        }catch (Exception e){
+            assertSame(e.getClass(), SenhaException.class);
+        }
+    }
 }
