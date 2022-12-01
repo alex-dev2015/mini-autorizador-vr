@@ -4,6 +4,7 @@ import java.util.Optional;
 import java.math.BigDecimal;
 
 import org.springframework.http.HttpStatus;
+import vr.miniautorizador.exception.ExistenteException;
 import vr.miniautorizador.utils.ValidacaoEnum;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -54,6 +55,9 @@ public class CartaoController {
         }
         catch (SaldoException e) {
             return new ResponseEntity<String>(ValidacaoEnum.SALDO_INSUFICIENTE.getMensagem(), HttpStatus.UNPROCESSABLE_ENTITY);
+        }
+        catch (ExistenteException e) {
+            return new ResponseEntity<String>(ValidacaoEnum.CARTAO_EXISTENTE.getMensagem(), HttpStatus.UNPROCESSABLE_ENTITY);
         }
     }
 

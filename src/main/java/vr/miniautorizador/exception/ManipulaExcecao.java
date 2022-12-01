@@ -13,6 +13,8 @@ public class ManipulaExcecao {
                 throw new SenhaException();
             case CARTAO_INEXISTENTE:
                 throw new CartaoException();
+            case CARTAO_EXISTENTE:
+                throw new ExistenteException();
             default:
                 return null;
         }
