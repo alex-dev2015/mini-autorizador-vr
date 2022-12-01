@@ -16,8 +16,13 @@ public enum ValidacaoEnum {
     CARTAO_INEXISTENTE {
         @Override
         public String getMensagem() {
-            return "CARTAO_INEXISTENTE ";
+            return "CARTAO_INEXISTENTE";
         }
+    },
+
+    CARTAO_EXISTENTE {
+        @Override
+        public String getMensagem() { return "CARTAO_EXISTENTE"; }
     };
 
     public abstract String getMensagem();
